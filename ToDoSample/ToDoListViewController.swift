@@ -42,10 +42,13 @@ class ToDoListViewController: UIViewController {
       return
     }
 
-    if id == "showItem" {
-      if let itemvc = segue.destination as? TodoItemViewController {
-        itemvc.delegate = self
-      }
+    switch id {
+      case "showItem":
+        if let itemvc = segue.destination as? TodoItemViewController {
+          itemvc.delegate = self
+        }
+      default:
+        break
     }
   }
 }
